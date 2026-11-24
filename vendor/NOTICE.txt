@@ -1,0 +1,13 @@
+Third-party files in this folder are redistributed unmodified.
+
+pyodide/  Pyodide 314.0.7 (CPython compiled to WebAssembly)
+          https://github.com/pyodide/pyodide
+          Licensed under the Mozilla Public License 2.0: https://www.mozilla.org/MPL/2.0/
+          Source code: https://github.com/pyodide/pyodide/tree/314.0.7
+
+wllama/   wllama 3.8.1 (llama.cpp compiled to WebAssembly), by Xuan Son Nguyen
+          https://github.com/ngxson/wllama
+          Licensed under the MIT License; see wllama/LICENCE.
+
+wllama-compat/  wllama-compat 3.8.1, the build for browsers without JSPI or 64-bit
+          WebAssembly memory, such as Safari. Same author and licence as wllama.

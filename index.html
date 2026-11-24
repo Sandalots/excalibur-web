@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EXCALIBUR-Medic</title>
+  <meta name="description" content="A medical model built for a 2 GB Raspberry Pi 5, running in your browser.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>EXCALIBUR-Medic</h1>
+    <p class="tagline">A medical model small enough for a Raspberry Pi, running in your browser.
+      It answers only from trusted medical sources, and tells you when it can't.</p>
+
+    <div class="model">
+      <span><strong>Language model</strong> <span class="muted">· 808 MB</span></span>
+      <span class="state" id="model-state">
+        <button id="load-model" class="secondary">Load the model</button>
+      </span>
+      <progress id="progress" hidden></progress>
+    </div>
+
+    <form id="ask-form">
+      <input type="text" id="question" autocomplete="off" autofocus placeholder="Getting ready…"
+        aria-label="Your question">
+      <button type="submit" id="ask" disabled>Ask</button>
+    </form>
+    <div class="chips" id="examples"></div>
+
+    <div class="card" id="result" hidden>
+      <p class="eyebrow">Your question</p>
+      <p id="asked"></p>
+      <p id="status"></p>
+      <div id="answer"></div>
+      <details id="source-box" hidden>
+        <summary>Show the source passage</summary>
+        <pre id="source"></pre>
+      </details>
+    </div>
+
+    <h2>More questions to try</h2>
+    <div id="more"></div>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>
