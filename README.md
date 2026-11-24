@@ -5,7 +5,7 @@ medical reference built for a 2 GB Raspberry Pi 5. A 1B model distilled from an 
 teacher answers from 19,411 NIH, FDA and MedlinePlus documents, and refuses when it has no
 suitable source.
 
-Everything runs in the visitor's browser, with no server:
+Everything runs in the browser, with no server:
 
 - **Search and safety checks:** the Pi's own `excalibur_inference.py`, loaded from the GitHub
   repository at a pinned commit and run unchanged in [Pyodide](https://pyodide.org).

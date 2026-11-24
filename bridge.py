@@ -19,6 +19,7 @@ IX = ei.BM25Index.load(Path(__file__).with_name("index.pkl"))
 def _preview_request(question: str, text: str, is_table: bool):
     """The grammar-constrained request verbatim_preview() sends to llama-server."""
     topic = ei.condition_of(question)
+    
     if topic:
         topic = " ".join(w if w.isupper() else w.capitalize() for w in topic.split())
         

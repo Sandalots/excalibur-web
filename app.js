@@ -5,7 +5,8 @@ import { Wllama } from './vendor/wllama/index.js';
 // pinned so the code, the prebuilt index and the model always match
 const RUNTIME_COMMIT = 'b2d03386612fe194a941bb450161fce872216975';
 const RUNTIME = `https://raw.githubusercontent.com/Sandalots/excalibur-medic/${RUNTIME_COMMIT}`;
-// the deployed GGUF (model repo revision 433dbe6), split by llama-gguf-split into parts under
+
+// the deployed GGUF, split by llama-gguf-split into parts under
 // 512 MB, which Safari needs; wllama finds the other parts from the first one's name
 const MODEL_URL = new URL('./model/excalibur-medic-1b-Q4_K_M-00001-of-00003.gguf', import.meta.url).href;
 
@@ -78,7 +79,6 @@ let wllama = null;      // the model, once loaded
 let busy = false;
 
 // ---------- small DOM helpers (text only, so nothing from a document is run as HTML)
-
 function el(tag, text, cls) {
   const e = document.createElement(tag);
   if (text !== undefined) e.textContent = text;
@@ -127,8 +127,7 @@ function renderGenerated(raw) {
   if (answer || raw.includes('<answer>')) box.append(block('final', 'Answer', el('p', answer || '…')));
 }
 
-// ---------- loading
-
+// Loading
 async function fetchOk(url) {
   const r = await fetch(url);
   if (!r.ok) throw new Error(`${r.status} fetching ${url}`);
@@ -256,8 +255,7 @@ async function loadModel() {
   }
 }
 
-// ---------- answering
-
+// Answering
 async function preview(p) {
   // the one-line introduction, written by the model inside a grammar, exactly as on the Pi
   if (!wllama || !p.preview) return p.fallback;
@@ -367,8 +365,7 @@ async function ask(question) {
   }
 }
 
-// ---------- wiring
-
+// Wiring
 function chip(q, scroll = false) {
   const b = el('button', q);
   b.type = 'button';
