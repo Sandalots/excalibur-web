@@ -1,7 +1,9 @@
 # EXCALIBUR-Medic demo
 
 A live demo of [EXCALIBUR-Medic](https://github.com/Sandalots/excalibur-medic), an offline
-medical reference built for a 2 GB Raspberry Pi 5. A 1B model distilled from an 8B medical
+medical reference built for a 2 GB Raspberry Pi 5. 
+
+A 1B model distilled from an 8B medical
 teacher answers from 19,411 NIH, FDA and MedlinePlus documents, and refuses when it has no
 suitable source.
 
